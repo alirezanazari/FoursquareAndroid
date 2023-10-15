@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'foursquare.data'
+    compileSdk rootProject.androidCompileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.androidMinSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(":domain")
+
+    implementation rootProject.kotlin.main
+    implementation rootProject.kotlin.coroutineCore
+
+    implementation rootProject.retrofit.main
+    implementation rootProject.retrofit.converter
+
+    implementation rootProject.okhttp.main
+    implementation rootProject.okhttp.logging
+
+    implementation rootProject.google.gson
+
+}

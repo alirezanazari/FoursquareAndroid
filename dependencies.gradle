@@ -43,16 +43,16 @@ ext {
     ]
 
     androidx = [
-            appcompat         : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
-            core              : "androidx.core:core-ktx:$rootProject.androidxCore",
-            fragment          : "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion",
-            constraintlayout  : "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayoutVersion",
-            lifecycle         : "androidx.lifecycle:lifecycle-extensions:$rootProject.androidxLifecycleExtensionsVersion",
-            viewmodelKtx      : "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.androidxLifecycleVersion",
-            lifecycleRuntime  : "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.androidxLifecycleVersion",
-            lifecycleCommon   : "androidx.lifecycle:lifecycle-common-java8:$rootProject.androidxLifecycleVersion",
-            navFrag           : "androidx.navigation:navigation-fragment-ktx:$nav_version",
-            navUi             : "androidx.navigation:navigation-ui-ktx:$nav_version"
+            appcompat       : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
+            core            : "androidx.core:core-ktx:$rootProject.androidxCore",
+            fragment        : "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion",
+            constraintlayout: "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayoutVersion",
+            lifecycle       : "androidx.lifecycle:lifecycle-extensions:$rootProject.androidxLifecycleExtensionsVersion",
+            viewmodelKtx    : "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.androidxLifecycleVersion",
+            lifecycleRuntime: "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.androidxLifecycleVersion",
+            lifecycleCommon : "androidx.lifecycle:lifecycle-common-java8:$rootProject.androidxLifecycleVersion",
+            navFrag         : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navUi           : "androidx.navigation:navigation-ui-ktx:$nav_version"
     ]
 
     dagger = [
@@ -61,7 +61,7 @@ ext {
     ]
 
     tool = [
-            coil : "io.coil-kt:coil:$rootProject.coilVersion"
+            coil: "io.coil-kt:coil:$rootProject.coilVersion"
     ]
 
     retrofit = [
@@ -75,10 +75,10 @@ ext {
     ]
 
     google = [
-            material              : "com.google.android.material:material:$rootProject.materialVersion",
-            services              : "com.google.android.gms:play-services-base:$rootProject.playServicesVersion",
-            locationServices      : "com.google.android.gms:play-services-location:$rootProject.locationServiceVersion",
-            gson                  : "com.google.code.gson:gson:$rootProject.googleGsonVersion"
+            material        : "com.google.android.material:material:$rootProject.materialVersion",
+            services        : "com.google.android.gms:play-services-base:$rootProject.playServicesVersion",
+            locationServices: "com.google.android.gms:play-services-location:$rootProject.locationServiceVersion",
+            gson            : "com.google.code.gson:gson:$rootProject.googleGsonVersion"
     ]
 
     tests = [

@@ -26,12 +26,10 @@ android {
         }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
     buildFeatures {
-        buildConfig  true
         viewBinding  true
     }
 
@@ -45,6 +43,10 @@ android {
 }
 
 dependencies {
+    implementation project(":domain")
+    implementation project(":data")
+    implementation project(":common")
+
     implementation rootProject.kotlin.main
     implementation rootProject.kotlin.coroutineCore
     implementation rootProject.kotlin.coroutineAndroid
@@ -61,9 +63,6 @@ dependencies {
     implementation rootProject.androidx.navUi
 
     implementation rootProject.google.material
-    implementation rootProject.google.locationServices
-
-    implementation rootProject.tool.coil
 
     implementation rootProject.dagger.main
     kapt rootProject.dagger.compiler

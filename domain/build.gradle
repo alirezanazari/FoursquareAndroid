@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation rootProject.kotlin.main
+    implementation rootProject.kotlin.coroutineCore
+    implementation rootProject.kotlin.coroutineAndroid
+
+    testImplementation rootProject.tests.coreKtx
+    testImplementation rootProject.tests.unit
+    testImplementation rootProject.tests.arch
+    testImplementation rootProject.tests.coroutines
+    testImplementation rootProject.tests.mockK
+}

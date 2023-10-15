@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'foursquare.common'
+    compileSdk rootProject.androidCompileSdkVersion
+
+    defaultConfig {
+        minSdk rootProject.androidMinSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation rootProject.kotlin.main
+    implementation rootProject.androidx.core
+
+    implementation rootProject.google.locationServices
+    implementation rootProject.tool.coil
+}
