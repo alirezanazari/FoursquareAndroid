@@ -1,4 +1,4 @@
-package ir.alirezanazari.foursquare.di
+package ir.alirezanazari.foursquare.di.util
 
 import android.os.Bundle
 import androidx.lifecycle.AbstractSavedStateViewModelFactory

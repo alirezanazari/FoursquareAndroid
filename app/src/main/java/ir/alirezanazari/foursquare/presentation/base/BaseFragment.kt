@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.viewbinding.ViewBinding
-import ir.alirezanazari.foursquare.di.ViewModelFactory
+import ir.alirezanazari.foursquare.di.util.ViewModelFactory
 import javax.inject.Inject
 
 // Written by Alireza Nazari, <@ali_rezaNazari> <a.alirezaNazari@gmail.com>.

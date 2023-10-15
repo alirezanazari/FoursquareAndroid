@@ -3,7 +3,7 @@ package ir.alirezanazari.foursquare.di.module
 import androidx.lifecycle.ViewModel
 import dagger.Module
 import dagger.multibindings.Multibinds
-import ir.alirezanazari.foursquare.di.AssistedSavedStateViewModelFactory
+import ir.alirezanazari.foursquare.di.util.AssistedSavedStateViewModelFactory
 
 // Written by Alireza Nazari, <@ali_rezaNazari> <a.alirezaNazari@gmail.com>.
 
