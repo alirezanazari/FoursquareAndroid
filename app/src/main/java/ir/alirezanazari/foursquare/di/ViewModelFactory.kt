@@ -1,13 +1,16 @@
-package foursquare.common.lifecycle
+package ir.alirezanazari.foursquare.di
 
 import android.os.Bundle
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
+import dagger.Reusable
+import javax.inject.Inject
 import javax.inject.Provider
 
-class ViewModelFactory constructor(
+@Reusable
+class ViewModelFactory @Inject constructor(
     private val assistedFactories: Map<Class<out ViewModel>, @JvmSuppressWildcards AssistedSavedStateViewModelFactory<out ViewModel>>,
     private val viewModelProviders: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>
 ) {

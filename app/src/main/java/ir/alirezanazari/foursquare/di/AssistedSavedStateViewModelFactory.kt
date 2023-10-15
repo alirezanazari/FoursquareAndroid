@@ -1,4 +1,4 @@
-package foursquare.common.lifecycle
+package ir.alirezanazari.foursquare.di
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
