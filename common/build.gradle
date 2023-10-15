@@ -28,7 +28,9 @@ android {
 dependencies {
     implementation rootProject.kotlin.main
     implementation rootProject.androidx.core
-
+    implementation rootProject.androidx.lifecycle
     implementation rootProject.google.locationServices
     implementation rootProject.tool.coil
+    implementation rootProject.dagger.main
+    implementation rootProject.androidx.viewmodelKtx
 }
