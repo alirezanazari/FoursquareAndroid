@@ -1,16 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
     namespace 'ir.alirezanazari.foursquare'
-    compileSdk 33
+    compileSdk rootProject.androidCompileSdkVersion
 
     defaultConfig {
         applicationId "ir.alirezanazari.foursquare"
-        minSdk 21
-        targetSdk 33
+        minSdk rootProject.androidMinSdkVersion
+        targetSdk rootProject.androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -18,11 +20,21 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        buildConfig  true
+        viewBinding  true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -33,11 +45,37 @@ android {
 }
 
 dependencies {
+    implementation rootProject.kotlin.main
+    implementation rootProject.kotlin.coroutineCore
+    implementation rootProject.kotlin.coroutineAndroid
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation rootProject.androidx.core
+    implementation rootProject.androidx.fragment
+    implementation rootProject.androidx.appcompat
+    implementation rootProject.androidx.viewmodelKtx
+    implementation rootProject.androidx.lifecycle
+    implementation rootProject.androidx.lifecycleRuntime
+    implementation rootProject.androidx.lifecycleCommon
+    implementation rootProject.androidx.constraintlayout
+    implementation rootProject.androidx.navFrag
+    implementation rootProject.androidx.navUi
+
+    implementation rootProject.google.material
+    implementation rootProject.google.locationServices
+
+    implementation rootProject.tool.coil
+
+    implementation rootProject.dagger.main
+    kapt rootProject.dagger.compiler
+
+    testImplementation rootProject.tests.unit
+    testImplementation rootProject.tests.arch
+    androidTestImplementation rootProject.tests.arch
+    testImplementation rootProject.tests.coroutines
+    testImplementation rootProject.tests.mockK
+    androidTestImplementation rootProject.tests.coreKtx
+    androidTestImplementation rootProject.tests.junitKtx
+    androidTestImplementation rootProject.tests.runner
+    androidTestImplementation rootProject.tests.rule
+    androidTestImplementation rootProject.tests.junit
 }
