@@ -13,6 +13,8 @@ dependencies {
     implementation rootProject.kotlin.coroutineCore
     implementation rootProject.kotlin.coroutineAndroid
 
+    implementation rootProject.google.gson
+
     testImplementation rootProject.tests.coreKtx
     testImplementation rootProject.tests.unit
     testImplementation rootProject.tests.arch
