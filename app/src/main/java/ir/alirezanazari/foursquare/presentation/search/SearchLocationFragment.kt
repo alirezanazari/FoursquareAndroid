@@ -24,6 +24,8 @@ import kotlinx.coroutines.flow.onEach
 class SearchLocationFragment :
     BaseFragment<SearchLocationViewModel, FragmentSearchLocationBinding>() {
 
+    private lateinit var adapter: PlaceAdapter
+
     override fun getViewModelClass() = SearchLocationViewModel::class.java
 
     override fun initInjection() {
@@ -38,8 +40,14 @@ class SearchLocationFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupMotionTransition()
+        setupPlacesAdapter()
         setupSearch()
         observeSearchResult()
+    }
+
+    private fun setupPlacesAdapter() {
+        adapter = PlaceAdapter()
+        binding.locationsRecyclerView.adapter = adapter
     }
 
     private fun setupMotionTransition() = with(binding) {
@@ -80,7 +88,7 @@ class SearchLocationFragment :
     }
 
     private fun showPlaces(places: List<LocationModel>) {
-
+        adapter.updateItems(places)
     }
 
     private fun showLoading() = with(binding) {

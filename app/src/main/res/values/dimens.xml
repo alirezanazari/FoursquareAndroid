@@ -4,4 +4,9 @@
     <dimen name="dp_8">8dp</dimen>
 
     <dimen name="search_input_height">60dp</dimen>
+    <dimen name="place_row_height">80dp</dimen>
+    <dimen name="place_icon_size">72dp</dimen>
+
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
 </resources>
