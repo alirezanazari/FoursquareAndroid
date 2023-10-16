@@ -64,6 +64,8 @@ dependencies {
 
     implementation rootProject.google.material
 
+    implementation rootProject.okhttp.main
+
     implementation rootProject.dagger.main
     kapt rootProject.dagger.compiler
 

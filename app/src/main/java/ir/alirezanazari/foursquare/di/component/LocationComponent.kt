@@ -3,6 +3,7 @@ package ir.alirezanazari.foursquare.di.component
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ir.alirezanazari.foursquare.di.module.LocationModule
 import ir.alirezanazari.foursquare.di.module.LocationViewModelModule
 import ir.alirezanazari.foursquare.di.scope.LocationScope
 import ir.alirezanazari.foursquare.presentation.details.LocationDetailsFragment
@@ -13,7 +14,7 @@ import ir.alirezanazari.foursquare.presentation.search.SearchLocationFragment
 @LocationScope
 @Component(
     dependencies = [AppComponent::class, LifecycleComponent::class],
-    modules = [LocationViewModelModule::class]
+    modules = [LocationViewModelModule::class, LocationModule::class]
 )
 interface LocationComponent {
 

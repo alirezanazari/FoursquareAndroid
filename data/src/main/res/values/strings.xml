@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources tanslatable="false" >
+    <string name="no_network_access">دسترسی به اینترنت را بررسی و دوباره تلاش کنید.</string>
+    <string name="server_error">خطایی در سرور رخ داده است</string>
+    <string name="unknown_error">خطای ناشناخته‌ای رخ داده است</string>
+</resources>

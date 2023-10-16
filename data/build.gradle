@@ -9,12 +9,18 @@ android {
 
     defaultConfig {
         minSdk rootProject.androidMinSdkVersion
+        buildConfigField "String", "BASE_URL", '"https://api.foursquare.com/v3/"'
+        buildConfigField "String", "FOURSQUARE_API_KEY", '"fsq3u4dJfdtR7P1gk3DPKgtdIXqVd2xx+tX2vCnnNnMsFgU="'
+
     }
 
     buildTypes {
         release {
             minifyEnabled false
         }
+    }
+    buildFeatures {
+        buildConfig  true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +36,7 @@ dependencies {
 
     implementation rootProject.kotlin.main
     implementation rootProject.kotlin.coroutineCore
+    implementation rootProject.androidx.annotation
 
     implementation rootProject.retrofit.main
     implementation rootProject.retrofit.converter

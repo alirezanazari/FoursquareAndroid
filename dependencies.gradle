@@ -8,6 +8,7 @@ ext {
 
     //----- Android libraries
     appCompatVersion = '1.6.1'
+    anotationVersion = '1.5.0'
     androidxCore = '1.10.1'
     fragmentVersion = '1.5.5'
     kotlinCoroutinesVersion = '1.7.3'
@@ -45,6 +46,7 @@ ext {
     androidx = [
             appcompat       : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
             core            : "androidx.core:core-ktx:$rootProject.androidxCore",
+            annotation      : "androidx.annotation:annotation:$rootProject.anotationVersion",
             fragment        : "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion",
             constraintlayout: "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintlayoutVersion",
             lifecycle       : "androidx.lifecycle:lifecycle-extensions:$rootProject.androidxLifecycleExtensionsVersion",
