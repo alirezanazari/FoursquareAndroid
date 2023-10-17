@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import foursquare.common.gone
+import foursquare.common.showToast
 import foursquare.common.textChanges
 import foursquare.common.visible
 import foursquare.domain.model.LocationModel
@@ -48,6 +50,21 @@ class SearchLocationFragment :
     private fun setupPlacesAdapter() {
         adapter = PlaceAdapter()
         binding.locationsRecyclerView.adapter = adapter
+        adapter.onItemClicked = { place ->
+            findNavController().navigate(
+                SearchLocationFragmentDirections.actionToLocationDetailsFragment(
+                    distance = place.distance, title = place.name, id = place.id
+                ),
+                navOptions = navOptions {
+                    anim {
+                        enter = R.anim.push_up_in
+                        exit = R.anim.scale_out
+                        popEnter = R.anim.scale_in
+                        popExit = R.anim.push_down_out
+                    }
+                }
+            )
+        }
     }
 
     private fun setupMotionTransition() = with(binding) {
@@ -76,7 +93,7 @@ class SearchLocationFragment :
 
                 is UiState.Error -> {
                     hideLoading()
-                    showError(it.message)
+                    showToast(it.message)
                 }
 
                 is UiState.Result -> {
@@ -99,10 +116,6 @@ class SearchLocationFragment :
     private fun hideLoading() = with(binding) {
         progressBar.gone()
         locationsRecyclerView.visible()
-    }
-
-    private fun showError(error: String) {
-        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
     }
 
     companion object {

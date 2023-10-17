@@ -19,6 +19,16 @@
         android:id="@+id/locationDetailsFragment"
         android:name="ir.alirezanazari.foursquare.presentation.details.LocationDetailsFragment"
         android:label="LocationDetailsFragment"
-        tools:layout="@layout/fragment_location_details" />
+        tools:layout="@layout/fragment_location_details">
+        <argument
+            android:name="distance"
+            app:argType="long" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

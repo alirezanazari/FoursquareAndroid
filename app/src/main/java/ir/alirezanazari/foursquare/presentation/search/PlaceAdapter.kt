@@ -13,6 +13,7 @@ import ir.alirezanazari.foursquare.databinding.RowPlaceBinding
 
 class PlaceAdapter : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
+    var onItemClicked: ((LocationModel) -> Unit)? = null
     private var items = listOf<LocationModel>()
 
     fun updateItems(newItems: List<LocationModel>) {
@@ -44,6 +45,9 @@ class PlaceAdapter : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
             place.categories.firstOrNull()?.run {
                 categoryTextView.text = name
                 iconImageView.loadImage(icon?.url.orEmpty(), placeholder = R.drawable.placeholder)
+            }
+            rootLayout.setOnClickListener {
+                onItemClicked?.invoke(place)
             }
         }
     }

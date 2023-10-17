@@ -37,7 +37,9 @@ data class LocationPhotoModel(
     val id: String,
     val prefix: String,
     val suffix: String
-)
+) {
+    val url = "$prefix${if (suffix.startsWith("/")) suffix.substring(1) else suffix}"
+}
 
 enum class LocationField(val field: String) {
     PHOTOS("photos")
