@@ -22,8 +22,8 @@ class SearchLocationViewModel @Inject constructor(
     private val searchLocationUseCase: GetSearchLocationUseCase
 ) : BaseViewModel() {
 
-    var latitude = 0.0
-    var longitude = 0.0
+    var latitude = 39.044893
+    var longitude = -77.488266
 
     private var searchJob: Job? = null
 
@@ -49,7 +49,7 @@ class SearchLocationViewModel @Inject constructor(
                     }
 
                     is ResultEntity.Success -> {
-                        _searchResult.value = UiState.Result(it.data.result)
+                        _searchResult.value = UiState.Result(it.data.results)
                     }
 
                     else -> Unit

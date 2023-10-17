@@ -12,6 +12,6 @@ sealed class SearchLocation {
     }
 
     data class Response(
-        val result: List<LocationModel>
+        val results: List<LocationModel>
     ): SearchLocation()
 }

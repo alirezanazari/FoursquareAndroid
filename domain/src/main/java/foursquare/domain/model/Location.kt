@@ -16,7 +16,7 @@ data class LocationModel(
 data class LocationCategory(
     val id: String,
     val name: String,
-    val icon: IconModel
+    val icon: IconModel?
 )
 
 data class LocationAddressModel(
@@ -30,7 +30,7 @@ data class IconModel(
     val prefix: String,
     val suffix: String,
 ) {
-    val url = prefix + suffix
+    val url = "$prefix$suffix"
 }
 
 data class LocationPhotoModel(

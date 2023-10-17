@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import foursquare.common.loadImage
 import foursquare.domain.model.LocationModel
+import ir.alirezanazari.foursquare.R
 import ir.alirezanazari.foursquare.databinding.RowPlaceBinding
 
 // Written by Alireza Nazari, <@ali_rezaNazari> <a.alirezaNazari@gmail.com>.
@@ -42,7 +43,7 @@ class PlaceAdapter : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
             titleTextView.text = place.name
             place.categories.firstOrNull()?.run {
                 categoryTextView.text = name
-                iconImageView.loadImage(icon.url)
+                iconImageView.loadImage(icon?.url.orEmpty(), placeholder = R.drawable.placeholder)
             }
         }
     }
