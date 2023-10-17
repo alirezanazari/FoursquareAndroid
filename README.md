@@ -15,6 +15,7 @@ Android Project developed by Kotlin.
 | Concurrent programming | `Coroutines` |
 | Reactive programming | `Flow` |
 | Network | `OkHttp, Retrofit` |
+| Test | `JUnit, Mockk` |
 
 # Features
 
