@@ -22,6 +22,8 @@ import com.google.android.gms.location.SettingsClient
 import com.google.android.gms.tasks.Task
 import java.lang.ref.WeakReference
 
+// Written by Alireza Nazari, <@ali_rezaNazari> <a.alirezaNazari@gmail.com>.
+
 class GetLocationHelper constructor(private val context: Context) {
 
     private var fusedLocationClient: FusedLocationProviderClient? = null
@@ -95,7 +97,7 @@ class GetLocationHelper constructor(private val context: Context) {
             ) != PackageManager.PERMISSION_GRANTED &&
             ActivityCompat.checkSelfPermission(
                 context,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             onResult.get()?.invoke(null)
@@ -107,7 +109,7 @@ class GetLocationHelper constructor(private val context: Context) {
                 if (lastLocation.time + TIME_THRESHOLD > System.currentTimeMillis() &&
                     ActivityCompat.checkSelfPermission(
                         context,
-                        android.Manifest.permission.ACCESS_FINE_LOCATION
+                        Manifest.permission.ACCESS_FINE_LOCATION
                     ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     lastLocation.onResultAction(onResult)
@@ -141,7 +143,7 @@ class GetLocationHelper constructor(private val context: Context) {
                 locationResult.locations.firstOrNull()?.let { location ->
                     if (ActivityCompat.checkSelfPermission(
                             context,
-                            android.Manifest.permission.ACCESS_FINE_LOCATION
+                            Manifest.permission.ACCESS_FINE_LOCATION
                         ) != PackageManager.PERMISSION_GRANTED
                     ) {
                         location.onResultAction(onResult)
