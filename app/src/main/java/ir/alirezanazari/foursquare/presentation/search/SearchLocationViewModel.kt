@@ -28,6 +28,7 @@ class SearchLocationViewModel @Inject constructor(
     var longitude = -77.488266
 
     private var searchJob: Job? = null
+    private var searchedKey = ""
 
     private val _searchResult =
         MutableStateFlow<UiState<List<LocationModel>>>(UiState.Result(listOf()))
@@ -37,26 +38,35 @@ class SearchLocationViewModel @Inject constructor(
     fun searchNearby(query: String) {
         searchJob?.cancelChildren()
 
-        if (query.isEmpty()) {
-            _searchResult.value = UiState.Result(listOf())
-        } else {
-            searchJob = searchLocationUseCase.invoke(
-                SearchLocation.Request(latitude, longitude, query)
-            ).onStart {
-                _searchResult.value = UiState.Loading
-            }.onEach {
-                when (it) {
-                    is ResultEntity.Error -> {
-                        _searchResult.value = UiState.Error(it.error.message)
-                    }
+        when {
+            query.isEmpty() -> {
+                _searchResult.value = UiState.Result(listOf())
+            }
 
-                    is ResultEntity.Success -> {
-                        _searchResult.value = UiState.Result(it.data.results)
-                    }
+            query == searchedKey && searchResult.value !is UiState.Error -> {
+                _searchResult.value = searchResult.value
+            }
 
-                    else -> Unit
-                }
-            }.launchIn(viewModelScope)
+            else -> {
+                searchJob = searchLocationUseCase.invoke(
+                    SearchLocation.Request(latitude, longitude, query)
+                ).onStart {
+                    _searchResult.value = UiState.Loading
+                }.onEach {
+                    when (it) {
+                        is ResultEntity.Error -> {
+                            _searchResult.value = UiState.Error(it.error.message)
+                        }
+
+                        is ResultEntity.Success -> {
+                            _searchResult.value = UiState.Result(it.data.results)
+                        }
+
+                        else -> Unit
+                    }
+                }.launchIn(viewModelScope)
+            }
         }
+        searchedKey = query
     }
 }
