@@ -10,6 +10,7 @@ Android Project developed by Kotlin.
 | Navigation | `Jetpack Navigation Component` |
 | UI | `XML` |
 | Animation | `Motion Layout` |
+| Image Loader | `Coil` |
 | Dedpendency Injection | `Dagger` |
 | Concurrent programming | `Coroutines` |
 | Reactive programming | `Flow` |
