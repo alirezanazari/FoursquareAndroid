@@ -24,8 +24,8 @@ class SearchLocationViewModel @Inject constructor(
 
     var motionProgress = 0F
 
-    var latitude = 39.044893
-    var longitude = -77.488266
+    var latitude: Double? = null
+    var longitude: Double? = null
 
     private var searchJob: Job? = null
     private var searchedKey = ""
@@ -69,4 +69,6 @@ class SearchLocationViewModel @Inject constructor(
         }
         searchedKey = query
     }
+
+    fun hasCurrentLocation() = latitude != null && longitude != null
 }

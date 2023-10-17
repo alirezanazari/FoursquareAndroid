@@ -14,7 +14,7 @@ interface ServerServices {
     @WorkerThread
     @GET("places/nearby")
     suspend fun searchPlaces(
-        @Query("ll") latlng: String,
+        @Query("ll") latlng: String?,
         @Query("query") query: String
     ): SearchLocation.Response
 

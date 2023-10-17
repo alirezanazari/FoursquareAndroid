@@ -11,6 +11,7 @@ ext {
     anotationVersion = '1.5.0'
     androidxCore = '1.10.1'
     fragmentVersion = '1.5.5'
+    activityVersion ='1.6.1'
     kotlinCoroutinesVersion = '1.7.3'
     androidxConstraintlayoutVersion = '2.1.4'
     androidxLifecycleExtensionsVersion = '2.2.0'
@@ -44,6 +45,7 @@ ext {
     ]
 
     androidx = [
+            activity        : "androidx.activity:activity:$rootProject.activityVersion",
             appcompat       : "androidx.appcompat:appcompat:$rootProject.appCompatVersion",
             core            : "androidx.core:core-ktx:$rootProject.androidxCore",
             annotation      : "androidx.annotation:annotation:$rootProject.anotationVersion",

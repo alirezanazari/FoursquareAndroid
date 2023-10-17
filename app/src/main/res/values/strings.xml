@@ -2,4 +2,5 @@
     <string name="app_name">Foursquare</string>
     <string name="search_nearby">Search nearby...</string>
     <string name="distance">Distance: %sm</string>
+    <string name="get_location_permission_denied">Location permission denied.</string>
 </resources>

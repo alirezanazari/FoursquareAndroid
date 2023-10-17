@@ -30,5 +30,5 @@ dependencies {
     implementation rootProject.androidx.core
     implementation rootProject.google.locationServices
     implementation rootProject.tool.coil
-    implementation rootProject.androidx.viewmodelKtx
+    implementation rootProject.androidx.activity
 }

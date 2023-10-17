@@ -4,11 +4,11 @@ package foursquare.domain.model
 
 sealed class SearchLocation {
     data class Request(
-        val lat: Double,
-        val lng: Double,
+        val lat: Double?,
+        val lng: Double?,
         val query: String
     ): SearchLocation() {
-        val latlng = "$lat,$lng"
+        val latlng = if (lat == null || lng == null) null else "$lat,$lng"
     }
 
     data class Response(

@@ -3,6 +3,7 @@ package ir.alirezanazari.foursquare.di.component
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ir.alirezanazari.foursquare.di.dependency.AppDependencies
 import ir.alirezanazari.foursquare.di.dependency.NetworkDependencies
 import ir.alirezanazari.foursquare.di.module.AppModule
 import ir.alirezanazari.foursquare.di.module.NetworkModule
@@ -18,6 +19,7 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent :
+    AppDependencies,
     NetworkDependencies {
 
     @Component.Factory
