@@ -68,6 +68,8 @@ class SearchLocationFragment :
     }
 
     private fun setupMotionTransition() = with(binding) {
+        rootLayout.progress = viewModel.motionProgress
+
         searchEditText.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus && rootLayout.currentState != R.id.end) {
                 rootLayout.transitionToEnd()
@@ -116,6 +118,11 @@ class SearchLocationFragment :
     private fun hideLoading() = with(binding) {
         progressBar.gone()
         locationsRecyclerView.visible()
+    }
+
+    override fun onPause() {
+        viewModel.motionProgress = binding.rootLayout.progress
+        super.onPause()
     }
 
     companion object {

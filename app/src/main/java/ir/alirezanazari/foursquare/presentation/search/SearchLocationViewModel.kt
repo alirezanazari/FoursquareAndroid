@@ -22,6 +22,8 @@ class SearchLocationViewModel @Inject constructor(
     private val searchLocationUseCase: GetSearchLocationUseCase
 ) : BaseViewModel() {
 
+    var motionProgress = 0F
+
     var latitude = 39.044893
     var longitude = -77.488266
 
